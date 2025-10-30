@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EndNote Guide | Comprehensive Docs (Processing‑style)</title>
+    <meta name="description" content="A comprehensive EndNote guide: install, import, organize, cite with CWYW, styles, sync & collaborate, PDF and full‑text, troubleshooting.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="Back to home">
+          <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="6" y="10" width="52" height="44" rx="8" fill="currentColor"/>
+            <path d="M18 22h28M18 30h28M18 38h20" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <span class="wordmark">EndNote Guide</span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+          <ul id="nav-list" class="nav-list">
+            <li><a href="#start">Start</a></li>
+            <li><a href="#import">Import</a></li>
+            <li><a href="#manage">Organize</a></li>
+            <li><a href="#cite">Cite</a></li>
+            <li><a href="#styles">Styles</a></li>
+            <li><a href="#sync">Sync</a></li>
+            <li><a href="#advanced">Advanced</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#download">Download</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light">🌓</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="home" class="hero" aria-label="Home">
+        <div class="container hero-inner">
+          <div class="hero-text">
+            <h1><span class="mono">EndNote</span> Guide</h1>
+            <p class="lead">A clean, Processing.org‑inspired documentation site to help you manage references and write papers faster with EndNote.</p>
+            <div class="search">
+              <label for="site-search" class="search-label">Site search</label>
+              <input id="site-search" type="search" placeholder="Search: install, import, CWYW, styles…" autocomplete="off" />
+              <ul id="search-results" class="search-results" aria-label="Search results"></ul>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <svg viewBox="0 0 420 260" class="hero-svg">
+              <rect x="10" y="10" width="400" height="240" rx="18" fill="var(--surface)" />
+              <g stroke="var(--primary)" stroke-width="6" stroke-linecap="round">
+                <path d="M60 80h300"/>
+                <path d="M60 120h300"/>
+                <path d="M60 160h220"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="container cards home-cards" aria-label="Quick links">
+          <a class="card link-card" href="#start"><h3>Get Started</h3><p>Create a library, set preferences, learn the UI.</p></a>
+          <a class="card link-card" href="#import"><h3>Import Sources</h3><p>RIS/ENW exports, PDFs, DOI/ISBN, browser capture.</p></a>
+          <a class="card link-card" href="#manage"><h3>Organize & Clean</h3><p>Groups, smart rules, tags, bulk edit, de‑dup.</p></a>
+          <a class="card link-card" href="#cite"><h3>Cite While You Write</h3><p>Insert, edit citations and format bibliography.</p></a>
+        </div>
+      </section>
+
+      <section id="start" class="section">
+        <div class="container">
+          <h2>1. Getting Started</h2>
+          <p>Create a new <strong>Library (.enl)</strong>, keep backups in cloud storage, and set core preferences early: display fields, duplicate rules, PDF auto‑rename, and attachment location.</p>
+          <div id="start-source" class="source-block"></div>
+          <div class="twocol">
+            <div>
+              <h3>Install & Activate</h3>
+              <ol>
+                <li>Run the installer and complete activation using serial or institutional login.</li>
+                <li>Open <em>Preferences</em> to configure <em>PDF Handling</em> and <em>Find Full Text</em>.</li>
+                <li>Back up previous libraries and the <em>Styles</em>/<em>Connections</em>/<em>Filters</em> folders before upgrading.</li>
+              </ol>
+            </div>
+            <div>
+              <h3>UI Overview</h3>
+              <ul>
+                <li>Left: <em>Groups</em> and <em>Smart Groups</em> for organization.</li>
+                <li>Center: customizable reference list columns.</li>
+                <li>Right: <em>Reference</em> details and <em>PDF Preview</em>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="import" class="section">
+        <div class="container">
+          <h2>2. Import & Capture</h2>
+          <div id="import-source" class="source-block"></div>
+          <div class="cards">
+            <article class="card"><h3>Database Exports</h3><p>From Web of Science, PubMed, Scopus etc., export <code>RIS</code>/<code>ENW</code> and double‑click or use <em>File → Import</em>.</p></article>
+            <article class="card"><h3>Bulk PDFs</h3><p>Use <em>Import Folder</em> to ingest PDFs; enable <em>PDF → References</em> metadata detection and auto‑rename.</p></article>
+            <article class="card"><h3>DOI/ISBN Lookup</h3><p>Enter DOI/ISBN under <em>Reference</em> and click <em>Lookup</em> to complete metadata.</p></article>
+            <article class="card"><h3>Browser Capture</h3><p>Install the capture tool to grab references and PDFs directly on publisher or database pages.</p></article>
+          </div>
+          <details class="tip"><summary>Before importing</summary><p>Check your output style and field mapping. Run <em>Find Duplicates</em> after each batch to avoid merge conflicts.</p></details>
+          <div id="ppt-gallery" class="source-block"></div>
+        </div>
+      </section>
+
+      <section id="manage" class="section">
+        <div class="container">
+          <h2>3. Organize & Clean</h2>
+          <div id="manage-source" class="source-block"></div>
+          <div class="twocol">
+            <div>
+              <h3>Groups & Smart Groups</h3>
+              <ul>
+                <li>Manual groups: drag to add.</li>
+                <li>Smart groups: auto‑classify by author/keywords/year.</li>
+                <li>Tags and custom fields for cross‑group filtering.</li>
+              </ul>
+              <h3>Bulk Edits</h3>
+              <p>Use <em>Tools → Change/Move/Copy Fields</em> to standardize cases, page ranges, volumes, and more.</p>
+            </div>
+            <div>
+              <h3>De‑dup Strategy</h3>
+              <ol>
+                <li>Set matching fields in <em>Preferences → Duplicates</em> (e.g., Title + Year + Author).</li>
+                <li>Run <em>References → Find Duplicates</em> right after importing.</li>
+                <li>Keep the record with DOI/abstract and better metadata completeness.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cite" class="section">
+        <div class="container">
+          <h2>4. Write & Cite (CWYW)</h2>
+          <div id="cite-source" class="source-block"></div>
+          <div class="twocol">
+            <div>
+              <h3>Word Add‑in</h3>
+              <ul>
+                <li>Ensure <em>Cite While You Write</em> is installed and visible in Word.</li>
+                <li>Select a style, use <em>Insert Citation</em> to search and insert.</li>
+                <li>Adjust page numbers, prefixes/suffixes via <em>Edit &amp; Manage Citation(s)</em>.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Temporary Markers</h3>
+              <p>Write with markers like <code>{Author, Year #RecordNumber}</code>, then run <em>Format Bibliography</em> to finalize references.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="styles" class="section">
+        <div class="container">
+          <h2>5. Output Styles</h2>
+          <div id="styles-source" class="source-block"></div>
+          <p>Common styles include APA, MLA, Chicago, IEEE, and journal‑specific templates. Use <em>Open Style Manager</em> to search and download, and <em>Edit</em> to tweak field order and punctuation rules.</p>
+          <div class="cards">
+            <article class="card"><h3>Field Mapping</h3><p>Ensure <em>Journal</em>/<em>Book Title</em>/<em>Pages</em>/<em>DOI</em> are consistently populated to avoid missing fields.</p></article>
+            <article class="card"><h3>Journal Abbreviations</h3><p>In medical fields, enable <em>Term Lists</em> for NLM abbreviations and switch between full/abbr. names as required.</p></article>
+            <article class="card"><h3>Multilingual</h3><p>Use style rules or custom templates for non‑Latin scripts and punctuation preferences.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="sync" class="section">
+        <div class="container">
+          <h2>6. Sync & Collaborate</h2>
+          <div id="sync-source" class="source-block"></div>
+          <ul>
+            <li>Enable EndNote Online sync to keep libraries consistent across devices.</li>
+            <li>Share libraries or groups with read/edit permissions for teams.</li>
+            <li>Automate backups and enable conflict prompts to avoid data loss.</li>
+          </ul>
+          <details class="tip"><summary>Attachment storage</summary><p>Keep the <em>.Data</em> folder with the <em>.enl</em> library, and archive regularly.</p></details>
+        </div>
+      </section>
+
+      <section id="advanced" class="section">
+        <div class="container">
+          <h2>7. Advanced: PDFs, Full Text, Search</h2>
+          <div id="advanced-source" class="source-block"></div>
+          <div class="twocol">
+            <div>
+              <h3>PDF Management</h3>
+              <p>Highlight, annotate, and extract notes in the built‑in viewer; auto‑rename files to <code>AuthorYear_Title.pdf</code>.</p>
+            </div>
+            <div>
+              <h3>Find Full Text</h3>
+              <p>Configure proxies and OpenURL resolvers to fetch accessible full texts in batch; keep metadata when full text is unavailable.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section">
+        <div class="container">
+          <h2>FAQ</h2>
+          <details>
+            <summary>Duplicate records after import?</summary>
+            <p>Use Title + Author + Year matching. Export to a fresh library and merge if needed.</p>
+          </details>
+          <details>
+            <summary>Word toolbar (CWYW) not showing?</summary>
+            <p>Check add‑in status, version compatibility, and Office Trust Center settings; try a repair install.</p>
+          </details>
+          <details>
+            <summary>Style doesn’t match journal guidelines?</summary>
+            <p>Download the journal’s style or duplicate and customize field order, punctuation, and case rules.</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="download" class="section">
+        <div class="container">
+          <h2>Download & References</h2>
+          <div class="cards">
+            <a class="card link-card" href="EndNote User Manual.pdf" target="_blank" rel="noopener"><h3>Official User Manual (PDF)</h3><p>The reference document in this folder; use alongside the guide.</p></a>
+            <a class="card link-card" href="#start"><h3>Quickstart</h3><p>Install, create a library, import your first batch.</p></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-inner">
+        <a class="back-to-top" href="#home" aria-label="Back to top">Back to top ↑</a>
+        <div>© <span id="year"></span> EndNote Guide</div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

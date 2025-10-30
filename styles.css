@@ -1,0 +1,120 @@
+/* 基础主题 */
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #555555;
+  --primary: #0a84ff;
+  --surface: #f5f7fa;
+  --card: #ffffff;
+  --border: #e6e8eb;
+  --ring: rgba(10,132,255,0.35);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0d12;
+    --text: #e8eaed;
+    --muted: #a3a7ad;
+    --primary: #4dabff;
+    --surface: #12151c;
+    --card: #111419;
+    --border: #222733;
+    --ring: rgba(77,171,255,0.35);
+  }
+}
+
+/* 显式主题切换（优先级高于系统偏好） */
+[data-theme="dark"] {
+  --bg: #0b0d12;
+  --text: #e8eaed;
+  --muted: #a3a7ad;
+  --primary: #4dabff;
+  --surface: #12151c;
+  --card: #111419;
+  --border: #222733;
+  --ring: rgba(77,171,255,0.35);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  line-height: 1.65;
+}
+
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+.container { width: min(1080px, 92%); margin: 0 auto; }
+h1, h2, h3 { line-height: 1.25; margin: 0 0 10px; }
+h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; }
+h2 { font-size: clamp(22px, 3vw, 28px); font-weight: 700; margin-top: 4px; }
+h3 { font-size: 18px; font-weight: 700; }
+p { margin: 6px 0 12px; }
+.lead { color: var(--muted); }
+.skip-link { position: absolute; left: -9999px; top: -9999px; }
+.skip-link:focus { left: 10px; top: 10px; background: #fff; color: #000; padding: 8px 10px; border-radius: 8px; }
+
+/* 头部（简洁、对比强） */
+.site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.85); border-bottom: 1px solid var(--border); backdrop-filter: saturate(180%) blur(10px); }
+@media (prefers-color-scheme: dark) { .site-header { background: rgba(11,13,18,0.75); } }
+.header-inner { display: flex; align-items: center; gap: 16px; padding: 10px 0; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 800; letter-spacing: 0.2px; }
+.wordmark { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+.logo { width: 28px; height: 28px; }
+.nav { margin-left: auto; }
+.nav-toggle { display: none; }
+.nav-list { display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; }
+.nav-list a { display: inline-block; text-decoration: none; color: var(--muted); padding: 8px 10px; border-radius: 8px; }
+.nav-list a:hover, .nav-list a:focus { color: var(--text); background: var(--surface); }
+.theme-toggle { margin-left: 6px; border: 1px solid var(--border); background: var(--card); color: var(--text); padding: 6px 10px; border-radius: 8px; cursor: pointer; }
+@media (max-width: 680px) {
+  .nav-toggle { display: inline-block; border: 1px solid var(--border); background: var(--card); color: var(--text); padding: 6px 10px; border-radius: 8px; }
+  .nav-list { display: none; position: absolute; right: 12px; top: 60px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 10px; flex-direction: column; min-width: 180px; }
+  .nav-list.open { display: flex; }
+}
+
+/* Hero */
+.hero { padding: 54px 0 28px; background: linear-gradient(180deg, var(--surface), transparent 60%); }
+.hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 24px; }
+.hero-svg { width: 100%; height: auto; display: block; }
+.search { margin-top: 16px; position: relative; }
+.search-label { display: block; font-size: 14px; color: var(--muted); margin-bottom: 6px; }
+.search input { width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; outline: none; background: var(--card); color: var(--text); }
+.search input:focus { box-shadow: 0 0 0 3px var(--ring); border-color: transparent; }
+.search-results { position: absolute; z-index: 10; list-style: none; margin: 6px 0 0; padding: 6px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; width: 100%; display: none; }
+.search-results.show { display: block; }
+.search-results li { padding: 6px 8px; border-radius: 8px; cursor: pointer; }
+.search-results li:hover { background: var(--surface); }
+
+/* 布局与组件 */
+.section { padding: 56px 0; }
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.link-card { text-decoration: none; color: inherit; transition: transform .06s ease, box-shadow .06s ease; }
+.link-card:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+.home-cards { margin-top: 10px; }
+.twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.tip { margin-top: 12px; border: 1px dashed var(--border); border-radius: 10px; padding: 10px 12px; }
+.tip summary { cursor: pointer; color: var(--muted); }
+.source-block { margin: 10px 0 14px; }
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.thumb { display: block; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--card); }
+.thumb img { width: 100%; height: 120px; object-fit: cover; display: block; }
+@media (max-width: 900px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 680px) { .gallery { grid-template-columns: repeat(2, 1fr); } .thumb img { height: 100px; } }
+
+@media (max-width: 900px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 680px) { .cards { grid-template-columns: 1fr; } .hero-inner { grid-template-columns: 1fr; } .twocol { grid-template-columns: 1fr; } }
+
+/* 页脚 */
+.site-footer { border-top: 1px solid var(--border); padding: 18px 0; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.back-to-top { text-decoration: none; color: var(--primary); }
+
+/* 打印 */
+@media print {
+  .site-header, .hero-visual, .nav, .theme-toggle { display: none !important; }
+  .section { padding: 16px 0; }
+  a::after { content: " (" attr(href) ")"; font-size: 12px; color: #6b7280; }
+}
