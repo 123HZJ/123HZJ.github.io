@@ -78,6 +78,41 @@ p { margin: 6px 0 12px; }
 .hero { padding: 54px 0 28px; background: linear-gradient(180deg, var(--surface), transparent 60%); }
 .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 24px; }
 .hero-svg { width: 100%; height: auto; display: block; }
+/* 数字图形拼贴（替换原 SVG） */
+.num-hero { position: relative; aspect-ratio: 21/13; max-width: 420px; width: 100%;
+  border-radius: 18px; background: radial-gradient(120% 120% at 20% 10%, rgba(77,171,255,.12), transparent 40%), var(--surface);
+  border: 1px solid var(--border); padding: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+.num-hero.single { padding: 0; }
+.num-card { position: absolute; margin: 0; padding: 0; border-radius: 12px; overflow: hidden; background: var(--card);
+  border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,.12); transform-origin: 50% 50%;
+}
+.num-card img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* 单图模式：占满容器 */
+.num-hero.single .num-card { left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%;
+  border-radius: inherit; border: 0; box-shadow: none; transform: none; animation: none; }
+
+/* 布局位置（不同大小与层次） */
+.num-card:nth-child(1) { left: 8%;  top: 10%; width: 48%; height: 40%; transform: rotate(-3deg); animation: floatA 14s ease-in-out infinite; }
+.num-card:nth-child(2) { right: 8%; top: 14%; width: 42%; height: 34%; transform: rotate(4deg);  animation: floatB 16s ease-in-out infinite -2s; }
+.num-card:nth-child(3) { left: 14%; bottom: 12%; width: 40%; height: 34%; transform: rotate(2deg);  animation: floatC 15s ease-in-out infinite -4s; }
+.num-card:nth-child(4) { right: 14%; bottom: 8%; width: 38%; height: 30%; transform: rotate(-4deg); animation: floatA 17s ease-in-out infinite -6s; }
+.num-card:nth-child(5) { left: 40%; top: 40%; width: 28%; height: 24%; transform: rotate(8deg);  animation: floatB 13s ease-in-out infinite -8s; }
+.num-card:nth-child(6) { left: 52%; top: 6%;  width: 26%; height: 22%; transform: rotate(-8deg); animation: floatC 18s ease-in-out infinite -10s; }
+
+@keyframes floatA { 0%,100% { transform: translateY(0) rotate(var(--r, -3deg)); } 50% { transform: translateY(-6px) rotate(calc(var(--r, -3deg) + 1.5deg)); } }
+@keyframes floatB { 0%,100% { transform: translateY(0) rotate(var(--r, 4deg)); } 50% { transform: translateY(6px) rotate(calc(var(--r, 4deg) - 1.5deg)); } }
+@keyframes floatC { 0%,100% { transform: translateX(0) rotate(var(--r, 2deg)); } 50% { transform: translateX(6px) rotate(calc(var(--r, 2deg) - 1deg)); } }
+
+@media (max-width: 680px) {
+  .num-hero { aspect-ratio: 3/2; }
+  .num-card { border-radius: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .num-card { animation: none !important; }
+}
 .search { margin-top: 16px; position: relative; }
 .search-label { display: block; font-size: 14px; color: var(--muted); margin-bottom: 6px; }
 .search input { width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; outline: none; background: var(--card); color: var(--text); }
